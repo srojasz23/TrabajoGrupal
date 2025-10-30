@@ -1,288 +1,178 @@
-Explicación del entregable y diagramas que deben presentar tus alumnos
+# 💼 PDSD-437_TRABAJOFINAL — Tech Solutions  
+### 📘 Proyecto Final: Aplicación Empresarial en Microsoft Visual Studio .NET
 
-Perfecto — aquí tienes una guía clara y detallada (en español) sobre qué deben entregar y qué diagramas incluir, basada en el enunciado del trabajo final (caso práctico “Tech Solutions”). He tomado como referencia el documento del enunciado que subiste. 
+---
 
-PDSD-437_TRABAJOFINAL
+## 🧩 1. Descripción General del Entregable  
 
-1) ¿De qué trata el entregable?
+El proyecto consiste en el **diseño e implementación de una aplicación empresarial** para la empresa ficticia **Tech Solutions**, desarrollada en **Microsoft Visual Studio (.NET)**.  
 
-El entregable es una propuesta completa de solución al caso práctico de la empresa Tech Solutions donde los estudiantes deben diseñar e implementar una aplicación empresarial en Microsoft Visual Studio .NET. El objetivo es demostrar competencia técnica en:
+La solución debe cumplir con los siguientes requisitos técnicos y de arquitectura:
+
+- **Diseño con patrones**: especialmente **N-Capas** y **Singleton**.  
+- **Autenticación y autorización** de usuarios.  
+- **Transacciones y rollback** en SQL Server y .NET.  
+- **Consultas con LINQ**.  
+- **Generación de reportes** (con parámetros y procedimientos almacenados).  
+- **Interfaz WPF** (Windows Presentation Foundation).  
+- **Manejo de hilos (Threads) y Timers**.  
+- **Creación de bibliotecas reutilizables (.dll)**.  
+- **Proyecto de instalación (Setup Project)**.  
+- **Informe detallado + diagramas UML y técnicos** que respalden el diseño.
 
-diseño con patrones (especialmente N-Capas y Singleton),
+---
 
-implementación de autenticación/autorization,
+##  2. Diagramas necesarios
 
-uso de transacciones y rollback en SQL Server y .NET,
+A continuación se listan los diagramas exigidos y el contenido que debe mostrar cada uno:
 
-consultas con LINQ,
+### 1️⃣ Diagrama de Arquitectura N-Capas (Obligatorio)
+**Capas:**  
+- Presentación (WPF)  
+- Lógica de Negocio (BLL)  
+- Acceso a Datos (DAL)  
+- Servicios / API (opcional)  
+- Base de Datos (SQL Server)
 
-generación de reportes (con parámetros y procedimientos almacenados),
+**Debe mostrar:**  
+- Flujo de comunicación entre capas (flechas).  
+- Tecnologías utilizadas (WPF, Entity Framework, ADO.NET, etc.).  
+- Aplicación del patrón **Singleton** (gestor de conexión o configuración).  
+- Proyectos y librerías que forman la solución (.dll / .csproj).  
 
-interfaz con WPF,
+---
 
-manejo de hilos y Timers,
+### 2️⃣ Diagrama de Componentes / Packages
+**Componentes principales:**  
+- UI (WPF)  
+- Servicios  
+- Repositorios  
+- Modelos  
+- Reportes  
+- Instalador  
 
-creación de bibliotecas reutilizables,
+**Debe mostrar:**  
+- Dependencias entre componentes y relaciones de uso.
+
+---
+
+### 3️⃣ Diagrama de Clases
+**Clases clave sugeridas:**  
+- `Cliente`, `Producto`, `Venta`, `Usuario`, `RepositorioVenta`, `ServicioAutenticacion`  
+
+**Debe incluir:**  
+- Atributos y métodos principales.  
+- Relaciones (herencia, agregación, composición).  
+- Correspondencia con entidades de la BD y DTOs.  
+
+---
+
+### 4️⃣ Diagrama Entidad–Relación / Esquema de Base de Datos
+**Tablas principales:**  
+`Clientes`, `Productos`, `Ventas`, `DetalleVenta`, `Usuarios`, `Roles`, etc.  
+
+**Debe indicar:**  
+- Claves primarias y foráneas.  
+- Relaciones (1–N, N–N).  
+- Procedimientos almacenados usados por reportes.
+
+---
+
+### 5️⃣ Diagramas de Secuencia (2 Recomendados)
+**Procesos a modelar:**
+- **Venta:** `UI → BLL → DAL → BD`  
+  - Incluir manejo de transacciones (Commit/Rollback).  
+- **Login:** `UI → ServicioAutenticacion → BD`  
+  - Verificación de credenciales y carga de roles.  
+
+**Objetivo:** visualizar el flujo runtime y puntos de control de errores/transacciones.
+
+---
+
+### 6️⃣ Diagrama de Actividad / Flujo de Trabajo
+**Ejemplo:** Proceso de generación de reportes  
+Pasos:  
+1. Selección de parámetros.  
+2. Ejecución de procedimiento almacenado.  
+3. Obtención de datos.  
+4. Generación del reporte.  
+5. Exportación / impresión.  
+
+Incluir decisiones (condicionales de permisos, selección de impresora, etc.).
+
+---
+
+### 7️⃣ Diagrama de Despliegue (Deployment)
+**Debe mostrar:**  
+- Servidor de base de datos (SQL Server).  
+- Estaciones cliente (App WPF).  
+- Ubicación del instalador y dispositivos (impresoras, llaves de hardware, etc.).  
+- Conexiones y protocolos de red utilizados.  
+
+Obligatorio si se entrega un proyecto de instalación.
+
+---
+
+### 8️⃣ Mockups / Wireframes WPF
+**Pantallas obligatorias:**  
+- Pantalla de **Login** (con control de roles).  
+- **Gestión de Clientes / Productos / Ventas / Reportes**.  
+
+**Debe incluir:**  
+- Controles principales (DataGrid, TextBox, Buttons, Timer, Filtros, etc.).  
+- Navegación entre pantallas.  
+- Diseño visual coherente y funcional.
+
+---
+
+## 📋 3. Requisitos Formales y Notas sobre Diagramas
+
+- **Notación:** UML o ER estándar.  
+- **Nivel de detalle:** suficiente para comprender flujo, actores y componentes.  
+- **Archivos:**  
+  - Incluir diagramas en el informe (PDF).  
+  - Subir fuentes editables (`.drawio`, `.uml`, `.vpp`, `.fig`, `.png`).
+  - Base de datos
+  - Instalador
+- **Relación con el código:** cada diagrama debe tener una breve explicación que vincule con el módulo/proyecto correspondiente.  
+
+**Ejemplo:**  
+> En el diagrama de clases, la clase `RepositorioVenta` se implementa en el proyecto `TechSolutions.DAL` y contiene métodos que interactúan con la tabla `Ventas` en SQL Server.
+
+---
+
+## ✅ 4. Checklist de Entrega
+
+| Ítem | Descripción | Estado |
+|------|--------------|--------|
+| 📄 Informe técnico | Explicación completa de la solución y respuestas a las preguntas guía | ☐ |
+| 🧱 Diagrama N-Capas | Justificación del patrón y ventajas de escalabilidad | ☐ |
+| ⚙️ Diagrama de Componentes | Estructura modular de la solución | ☐ |
+| 🧬 Diagrama de Clases | Clases principales y relaciones | ☐ |
+| 🗃️ Diagrama ER | Esquema completo de la base de datos | ☐ |
+| 🔁 Diagramas de Secuencia | Flujo de venta y login | ☐ |
+| 🧭 Diagrama de Actividad | Generación de reportes | ☐ |
+| 🖥️ Mockups WPF | Interfaz principal y pantallas clave | ☐ |
+| 🌐 Diagrama de Despliegue | Infraestructura y comunicación | ☐ |
+| 💻 Código fuente | Solución VS con proyectos separados | ☐ |
+| 🧾 Scripts SQL | DDL + procedimientos almacenados | ☐ |
+| 🔄 Pruebas de transacción | Ejemplo con commit y rollback | ☐ |
+| 📦 Instalador | Proyecto de instalación o guía de despliegue | ☐ |
+| 📊 Reportes | Archivos de reporte y salida PDF | ☐ |
+| 🔑 README | Instrucciones de ejecución y credenciales de prueba | ☐ |
+
+---
+
+## 🧰 5. Herramientas Recomendadas
+
+| Tipo | Herramienta | Comentario |
+|------|--------------|------------|
+| 🧠 Diagramas UML | **Draw.io (diagrams.net)** | Gratuito, exporta PNG/PDF/Editable |
+| 🧩 Modelado textual | **PlantUML** | Ideal si trabajas con código fuente |
+| 💼 Diseño profesional | **Visual Paradigm / StarUML** | UML formal y completo |
+| 🎨 Mockups | **Figma / Balsamiq** | Para pantallas WPF |
+| 🗃️ BD | **SQL Server Management Studio (SSMS)** | Diagramas ER y ejecución de scripts |
+
+---
 
-empaquetado en proyecto de instalación,
 
-y la presentación de un informe detallado y los diagramas/esquemas que respalden el diseño. 
-
-PDSD-437_TRABAJOFINAL
-
-2) Lista de diagramas obligatorios (y por qué cada uno es necesario)
-
-A continuación, los diagramas que deben presentar — con qué mostrar en cada uno y el nivel de detalle esperado.
-
-1. Diagrama de Arquitectura N-Capas (obligatorio)
-
-Qué mostrar
-
-Capas: Presentación (WPF), Lógica de Negocio, Acceso a Datos, (opcional) Servicios/BLL, Base de Datos.
-
-Comunicaciones entre capas (flechas), protocolos/tecnologías (ej. WPF → BLL: llamadas a métodos; BLL → DAL: repositorios / ADO.NET / Entity Framework).
-
-Donde se aplica Singleton (ej. gestor de conexión, gestor de configuración).
-Nivel de detalle
-
-Indicar responsabilidades de cada capa y librerías/proyectos que componen la solución (.dlls, proyectos VS).
-Por qué
-
-Demuestra la separación de responsabilidades y cómo se logra la escalabilidad y mantenibilidad. 
-
-PDSD-437_TRABAJOFINAL
-
-2. Diagrama de Componentes / Packages (obligatorio)
-
-Qué mostrar
-
-Componentes principales: UI (WPF), Servicios, Repositorios, Modelos, Reportes, Instalador.
-
-Dependencias entre componentes (qué depende de qué).
-Nivel de detalle
-
-Nombres de proyectos (ej. Presentacion.WPF, Negocio, Datos, Reportes), interfaces públicas.
-Por qué
-
-Clarifica la modularidad y la reutilización (bibliotecas de clases).
-
-3. Diagrama de Clases (al menos 1-2 principales) — UML
-
-Qué mostrar
-
-Clases clave: Cliente, Producto, Venta, Usuario, RepositorioVenta, ServicioAutenticacion.
-
-Atributos importantes y métodos públicos (sólo los relevantes para la lógica de negocio).
-
-Relaciones (agregación, composición, herencia).
-Nivel de detalle
-
-Suficiente para entender modelos de datos y comportamiento; no es necesario diagramar cada clase trivial.
-Por qué
-
-Muestra diseño orientado a objetos y cómo se mapeará a la BD / DTOs. 
-
-PDSD-437_TRABAJOFINAL
-
-4. Diagrama Entidad-Relación / Esquema de Base de Datos (obligatorio)
-
-Qué mostrar
-
-Tablas principales (Clientes, Productos, Ventas, DetalleVenta, Usuarios, Roles, etc.), claves primarias/foráneas.
-
-Índices importantes y tipos de datos sugeridos.
-Nivel de detalle
-
-Incluir campos clave y relaciones cardinales (1-N, N-M).
-Por qué
-
-Fundamenta el uso de transacciones, consultas LINQ y reportes basados en procedimientos almacenados. 
-
-PDSD-437_TRABAJOFINAL
-
-5. Diagrama de Secuencia (2 recomendados: proceso de venta y flujo de login)
-
-Qué mostrar
-
-Mensajes entre objetos/capas para escenarios clave:
-
-Venta: UI → BLL → DAL → BD (incluir transacción, commit/rollback).
-
-Login: UI → ServicioAutenticacion → BD (verificación credenciales, carga de roles).
-
-Señalar puntos donde ocurren transacciones y manejo de errores.
-Nivel de detalle
-
-Secuencia paso a paso, con notas sobre validaciones y seguridad.
-Por qué
-
-Clarifica el flujo runtime y la implementación de transacciones/rollback y autorización. 
-
-PDSD-437_TRABAJOFINAL
-
-6. Diagrama de Actividad o Flujo de Trabajo (ej. proceso de generación de reporte)
-
-Qué mostrar
-
-Pasos: selección parámetros → ejecución SP → obtención datos → generación reporte → impresión/guardar PDF.
-
-Decisiones (ej. si el usuario tiene permiso, seleccionar impresora por defecto).
-Por qué
-
-Es útil para mostrar el comportamiento con condiciones y manejo de errores.
-
-7. Diagrama de Despliegue (Deployment)
-
-Qué mostrar
-
-Servidores (Servidor BD — SQL Server), estaciones cliente (app WPF), ubicación del instalador, impresoras de red.
-
-Si usan autenticación basada en hardware, indicar dispositivos/llaves y dónde se validan.
-Por qué
-
-Es obligatorio si se pide un proyecto de instalación y se menciona autenticación basada en hardware. 
-
-PDSD-437_TRABAJOFINAL
-
-8. Diagrama de Estado (opcional, recomendado para objetos con estados complejos)
-
-Qué mostrar
-
-Ciclo de vida de una Venta (creada → pendiente → confirmada → facturada → anulada) y transiciones que provocan rollback.
-Por qué
-
-Útil para auditoría y manejo de transacciones.
-
-9. Mockups / Wireframes de la interfaz WPF (obligatorio)
-
-Qué mostrar
-
-Pantalla de login (con control de niveles), pantallas principales: gestión de clientes, productos, ventas, reporte.
-
-Indicar controles clave (DataGrid, filtros, botones, Timer visual si aplica).
-Por qué
-
-Demuestra usabilidad y diseño de la interfaz. 
-
-PDSD-437_TRABAJOFINAL
-
-10. Diagrama o esquema del Proceso de Impresión y Reportes
-
-Qué mostrar
-
-Flujo: generación de dataset → parámetros → llamada al generador de reportes → spool/driver → impresión.
-
-Indicar el uso de procedimientos almacenados y parámetros.
-Por qué
-
-Es un requisito explícito del enunciado (gestión de impresiones y reportes con parámetros). 
-
-PDSD-437_TRABAJOFINAL
-
-11. (Opcional pero recomendable) Diagrama de Concurrencia / Hilos y Timer
-
-Qué mostrar
-
-Cómo se usan Threads/Timers para tareas programadas (p. ej. actualización de stock, backups).
-
-Gestión de sincronización (locks, monitores) para evitar condiciones de carrera.
-Por qué
-
-Especificado en el enunciado: usar hilos y Timer para mejorar rendimiento y eventos programados. 
-
-PDSD-437_TRABAJOFINAL
-
-3) Requisitos formales y notas sobre cada diagrama
-
-Notación: UML o ER estándar. No hace falta notación académica perfecta, pero sí claridad.
-
-Nivel de detalle: cada diagrama debe permitir a otra persona (profesor/examinador) entender: propósito, actores, flujo y componentes necesarios para la implementación.
-
-Archivos: incluir diagramas en el informe (PDF) y subir fuentes editables (Diagramas en Draw.io, Visual Paradigm, PlantUML, Lucidchart, o imágenes PNG).
-
-Relación con código: cada diagrama debe tener una breve explicación (1-2 párrafos) que enlace el diagrama con el módulo/proyecto/archivo de código donde se implementará.
-
-Ejemplos: en el diagrama de clases, mencionar clases concretas del proyecto (nombres que aparecerán en la solución VS). 
-
-PDSD-437_TRABAJOFINAL
-
-4) Checklist de entrega (sugerido)
-
-Informe técnico (documento) que explique la solución y responda las Preguntas Guía del enunciado. 
-
-PDSD-437_TRABAJOFINAL
-
-Diagrama de Arquitectura N-Capas + explicación de por qué mejora la escalabilidad.
-
-Diagrama de Componentes / Packages.
-
-Diagrama de Clases (mín. 1).
-
-Diagrama ER / Esquema BD con claves y relaciones.
-
-Diagrama(s) de Secuencia: venta y login.
-
-Mockups/Wireframes WPF (pantallas clave).
-
-Diagrama de Despliegue (Deployment).
-
-Diagrama de Actividad: flujo de generación de reportes.
-
-Código fuente (solución VS con proyectos separados), incluyendo bibliotecas de clase.
-
-Scripts SQL: DDL para crear tablas, índices, procedimientos almacenados (usados por reportes).
-
-Pruebas de transacción: ejemplo de una operación con commit + ejemplo que desrolle rollback.
-
-Proyecto de instalación / instalador (o documentación de cómo desplegar).
-
-Archivos de reportes (plantillas) y captura de impresión o PDF generado.
-
-README con instrucciones para ejecutar y credenciales de prueba (usuarios/roles).
-
-5) Sugerencias para la entrega y evaluación (cómo justificar cada diagrama)
-
-Acompañar cada diagrama con:
-
-Una línea que explique su propósito.
-
-Elementos clave a revisar por el docente (p.ej. “verificar integridad referencial en ER”).
-
-Mapear clases del diagrama con archivos del proyecto (p. ej. Negocio/ServicioVenta.cs ↔ DiagramaClase: ServicioVenta).
-
-Demostrar trazabilidad: que cada requerimiento (autenticación, transacciones, reportes, timer, hilos, instalador) esté asociado a un diagrama y a un módulo de código.
-
-Pruebas: incluir capturas/registro de prueba para:
-
-Login con diferentes roles.
-
-Compra que hace commit y compra que falla y hace rollback.
-
-Generación e impresión de reporte.
-
-Documentación adicional: manual de usuario breve (cómo instalar y usar).
-
-6) Formato recomendado para los diagramas (herramientas)
-
-Draw.io / diagrams.net — gratis, exporta PNG/PDF/Editable.
-
-PlantUML — bueno si quieren generar diagramas desde texto (útil en repos).
-
-Visual Paradigm / StarUML — si prefieren UML más formal.
-
-Figma / Balsamiq — para mockups de UI.
-
-SQL Server Management Studio — para diagramas de BD y scripts SQL.
-Indicar en el informe los archivos fuente (.drawio, .puml, .vsdx, .sql). 
-
-PDSD-437_TRABAJOFINAL
-
-7) Criterios rápidos de evaluación (sugeridos)
-
-Completitud: ¿están todos los diagramas requeridos? (30%)
-
-Coherencia: ¿los diagramas y el código coinciden? (25%)
-
-Calidad técnica: transacciones, rollback, autenticación segura, uso adecuado de patrones (25%)
-
-Presentación y documentación: informes, scripts y guía de instalación (20%)
