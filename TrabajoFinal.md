@@ -28,7 +28,7 @@ A continuación se listan los diagramas exigidos y el contenido que debe mostrar
 
 ### 1️⃣ Diagrama de Arquitectura N-Capas (Obligatorio)
 **Capas:**  
-- Presentación (WPF)  
+- Presentación  
 - Lógica de Negocio (BLL)  
 - Acceso a Datos (DAL)  
 - Servicios / API (opcional)  
@@ -36,7 +36,7 @@ A continuación se listan los diagramas exigidos y el contenido que debe mostrar
 
 **Debe mostrar:**  
 - Flujo de comunicación entre capas (flechas).  
-- Tecnologías utilizadas (WPF, Entity Framework, ADO.NET, etc.).  
+- Tecnologías utilizadas ( Entity Framework, ADO.NET, etc.).  
 - Aplicación del patrón **Singleton** (gestor de conexión o configuración).  
 - Proyectos y librerías que forman la solución (.dll / .csproj).  
 
@@ -44,7 +44,7 @@ A continuación se listan los diagramas exigidos y el contenido que debe mostrar
 
 ### 2️⃣ Diagrama de Componentes / Packages
 **Componentes principales:**  
-- UI (WPF)  
+- UI   
 - Servicios  
 - Repositorios  
 - Modelos  
@@ -105,7 +105,6 @@ Incluir decisiones (condicionales de permisos, selección de impresora, etc.).
 ### 7️⃣ Diagrama de Despliegue (Deployment)
 **Debe mostrar:**  
 - Servidor de base de datos (SQL Server).  
-- Estaciones cliente (App WPF).  
 - Ubicación del instalador y dispositivos (impresoras, llaves de hardware, etc.).  
 - Conexiones y protocolos de red utilizados.  
 
@@ -113,7 +112,7 @@ Obligatorio si se entrega un proyecto de instalación.
 
 ---
 
-### 8️⃣ Mockups / Wireframes WPF
+### 8️⃣ Mockups / Wireframes 
 **Pantallas obligatorias:**  
 - Pantalla de **Login** (con control de roles).  
 - **Gestión de Clientes / Productos / Ventas / Reportes**.  
