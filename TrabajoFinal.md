@@ -151,7 +151,7 @@ Obligatorio si se entrega un proyecto de instalación.
 | 🗃️ Diagrama ER | Esquema completo de la base de datos | ☐ |
 | 🔁 Diagramas de Secuencia | Flujo de venta y login | ☐ |
 | 🧭 Diagrama de Actividad | Generación de reportes | ☐ |
-| 🖥️ Mockups WPF | Interfaz principal y pantallas clave | ☐ |
+| 🖥️ Mockups UI | Interfaz principal y pantallas clave | ☐ |
 | 🌐 Diagrama de Despliegue | Infraestructura y comunicación | ☐ |
 | 💻 Código fuente | Solución VS con proyectos separados | ☐ |
 | 🧾 Scripts SQL | DDL + procedimientos almacenados | ☐ |
@@ -169,7 +169,7 @@ Obligatorio si se entrega un proyecto de instalación.
 | 🧠 Diagramas UML | **Draw.io (diagrams.net)** | Gratuito, exporta PNG/PDF/Editable |
 | 🧩 Modelado textual | **PlantUML** | Ideal si trabajas con código fuente |
 | 💼 Diseño profesional | **Visual Paradigm / StarUML** | UML formal y completo |
-| 🎨 Mockups | **Figma / Balsamiq** | Para pantallas WPF |
+| 🎨 Mockups | **Figma / Balsamiq** | Para pantallas UI|
 | 🗃️ BD | **SQL Server Management Studio (SSMS)** | Diagramas ER y ejecución de scripts |
 
 ---
